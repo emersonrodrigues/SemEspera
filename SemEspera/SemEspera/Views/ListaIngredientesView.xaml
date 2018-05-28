@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemEspera.Views.ListaIngredientesView"
+             Title="Ingredientes">
+    <StackLayout HorizontalOptions="FillAndExpand" >
+        <ListView x:Name="ListViewIngredientes" ItemsSource="{Binding Ingredientes}" Margin="2" SelectedItem="{Binding IngredienteSelecionado}">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.View >
+                            <StackLayout x:Name="Item" Orientation="Horizontal" Padding="0,5,0,5">
+                                <Label  Text="{Binding NomeIngrediente }" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"></Label>
+                                <!--<Label  Text=" - " VerticalTextAlignment="Center"></Label>
+                                <Label  Text="{Binding Quantidade }" VerticalTextAlignment="Center" HorizontalTextAlignment="End" XAlign="End"></Label>-->
+                                <Button x:Name="BtnMais" Text="+" BorderWidth="0" Margin="0" VerticalOptions="Center" WidthRequest="40" HeightRequest="40"   HorizontalOptions="End" BindingContext="{Binding Source={x:Reference ListViewIngredientes}, Path=BindingContext}" Command="{Binding AdicionaQuantidade}"  CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"></Button>
+                                <Label Text="{Binding Quantidade, Mode=TwoWay}"  VerticalOptions="Center" HorizontalOptions="End" ></Label>
+                                <Button x:Name="BtnMenos" Text="-" BorderWidth="0" Margin="0"  VerticalOptions="Center" WidthRequest="40" HeightRequest="40"     HorizontalOptions="End" BindingContext="{Binding Source={x:Reference ListViewIngredientes}, Path=BindingContext}" Command="{Binding RemoverQuantidade}"  CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"></Button>
+
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="BtnAdicionarAoPedido" Text="Adicionar"    Command="{Binding AdicionaAoPedido}"></Button>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{63AFDA0C-A76F-46C2-B06D-AF4676C6FBB1}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SemEspera</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Data\CreateTables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\IngredienteDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ISqlite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\PedidoDao.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ProdutoDAO.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\UserDao.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\JsonSerialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\EntryCellPassWord.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\util.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Midia\Icamera.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Ingrediente.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ModelsBAse\PedidoProduto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ModelsBAse\PedidoProdutoIngrediente.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ModelsBAse\ProdutoIngrediente.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pedido.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ModelsBAse\PedidoBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Produto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Mock\mock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ModelsBAse\ProdutoBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ProdutoJson.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\IngredienteViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ListaIngreditentesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ListaProdutosViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PedidosSalvosViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PedidoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PerfilCadastroViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PerfilViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\QrcodeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\IngredienteView.xaml.cs">
+      <DependentUpon>IngredienteView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListaIngredientesView.xaml.cs">
+      <DependentUpon>ListaIngredientesView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ListaProdutosView.xaml.cs">
+      <DependentUpon>ListaProdutosView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MasterDetailView.xaml.cs">
+      <DependentUpon>MasterDetailView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PedidosSalvosView.xaml.cs">
+      <DependentUpon>PedidosSalvosView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PedidoView.xaml.cs">
+      <DependentUpon>PedidoView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PerfilCadastroView.xaml.cs">
+      <DependentUpon>PerfilCadastroView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\PerfilView.xaml.cs">
+      <DependentUpon>PerfilView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\QrcodeView.xaml.cs">
+      <DependentUpon>QrcodeView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ListaProdutosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\IngredienteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ListaIngredientesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\PedidoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\QrcodeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\MasterDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\PerfilView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\PedidosSalvosView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\PerfilCadastroView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

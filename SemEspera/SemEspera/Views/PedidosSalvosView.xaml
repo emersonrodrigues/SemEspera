@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemEspera.Views.PedidosSalvosView">
+
+    <StackLayout>
+        <ListView x:Name="ListViewProdutos" ItemsSource="{Binding PedidosSalvos}" Margin="2" >
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.View >
+                            <StackLayout  Orientation="Horizontal" Padding="5,0,5,0">
+                                <Label  Text="{Binding Id }" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" XAlign="Start"></Label>
+                                <Label  Text="{Binding DataEditada }" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" XAlign="End"></Label>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+  
+    <Button Text="Fazer Pedido" Command="{Binding FazerPedidoCommand}"></Button>
+        </StackLayout>
+</ContentPage>

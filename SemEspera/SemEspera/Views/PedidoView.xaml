@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemEspera.Views.PedidoView"
+             Title="Pedido">
+    <StackLayout >
+        <ListView x:Name="ListViewPedido" ItemsSource="{Binding ProdutosView}" Margin="3">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.View >
+                            <StackLayout  x:Name="Item" Orientation="Horizontal" Padding="0,5,0,5">
+                                <Label  Text="{Binding NomeProduto}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"></Label>
+                                <Label  Text=" - " VerticalTextAlignment="Center"></Label>
+                                <Label  Text="{Binding Valor }" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand"></Label>
+                                <Button x:Name="BtnExcluir" Text="x" BackgroundColor="Red" BorderWidth="0" Margin="0"  VerticalOptions="Center" WidthRequest="40" HeightRequest="40"     HorizontalOptions="End" BindingContext="{Binding Source={x:Reference ListViewPedido}, Path=BindingContext}" Command="{Binding RemoverProduto}"  CommandParameter="{Binding Source={x:Reference Item}, Path=BindingContext}"></Button>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <BoxView Color="Gray"  HeightRequest="1" ></BoxView>
+        <StackLayout Orientation="Horizontal">
+            <Label  Text="Total"  HorizontalOptions="StartAndExpand"></Label>
+            <Label  Text="{Binding ValorToral}" HorizontalOptions="EndAndExpand"></Label>
+
+        </StackLayout>
+
+        <Label  Text="Adicionar Produtos"  FontSize="Micro" HorizontalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding AdicionaProdutos}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <!--<Button x:Name="BtnAdicionarAoPedido" HeightRequest=""  FontSize="Micro" Margin="0" Text="Adicionar Produtos"  BackgroundColor="White"  Command="{Binding AdicionaProdutos}"></Button>-->
+        <Button x:Name="BtnFinalizarPedido" FontSize="Micro" Margin="0" Text="Finalizar Pedido"    Command="{Binding FinalizarPedido}"></Button>
+    </StackLayout>
+</ContentPage>

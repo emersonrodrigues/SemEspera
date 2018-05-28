@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemEspera.Views.PerfilCadastroView"
+             xmlns:E="clr-namespace:SemEspera.Helpers"
+             Title="Cadastro">
+    <StackLayout>
+      
+            <Image  Margin="5,15,5,15" Source="{Binding FotoPerfil}"></Image>
+        
+                
+        <TableView>
+            <TableRoot>
+                <TableSection>
+                    
+                    <ViewCell>
+                        
+                        <Label  Text="Tirar Foto"  FontSize="Micro" HorizontalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TirarFoto}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                    </ViewCell>
+
+                    <EntryCell Placeholder="Nome"  Text="{Binding Nome}"></EntryCell>
+                    <EntryCell Placeholder="Sobre Nome" Text="{Binding SobreNome}"></EntryCell>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="12,0,0,0">
+                            <Label Text="Data:"></Label>
+                            <DatePicker Date="{Binding DataNascimento}"></DatePicker>
+                        </StackLayout>
+                    </ViewCell>
+                    <!--<EntryCell   Text="{Binding DataNascimento}"></EntryCell>-->
+                    <EntryCell Placeholder="Telefone" Text="{Binding Telefone}"></EntryCell>
+                    <EntryCell Placeholder="Email" Text="{Binding Email}"></EntryCell>
+                    <!--<E:EntryCellPassWord x:Name="teste" Placeholder="Senha"  ></E:EntryCellPassWord>-->
+                    <ViewCell>
+                        
+                            <Entry  HorizontalOptions="Fill" Placeholder="Senha" IsPassword="True" Text="{Binding Senha}"></Entry>
+                        
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView> 
+        
+            <!--<Entry Placeholder="Senha" IsPassword="True" Text="{Binding Senha}"></Entry>-->
+
+
+        <Button Text=" Cadastrar" Command="{Binding CadastrarUsuario}"></Button>
+    </StackLayout>
+</ContentPage>

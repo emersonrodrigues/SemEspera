@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemEspera.Views.ListaProdutosView"
+             Title="Produtos">
+    <StackLayout>
+        <ListView x:Name="ListViewProdutos" ItemsSource="{Binding Produtos}" Margin="2" SelectedItem="{Binding ProdutoSelecionado}">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.View >
+                            <StackLayout  Orientation="Horizontal" Padding="5,0,5,0">
+                                <Label  Text="{Binding NomeProduto }" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" XAlign="Start"></Label>
+                                <!--<Label  Text=" - " VerticalTextAlignment="Center"></Label>-->
+                                <Label  Text="{Binding ValorMoeda }" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" XAlign="End"></Label>
+
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

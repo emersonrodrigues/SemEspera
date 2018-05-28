@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemEspera.Views.IngredienteView"
+             Title="{Binding Ingrediente.NomeIngrediente}">
+    <StackLayout Margin="3">
+    <StackLayout   Orientation="Horizontal" >
+            <Button x:Name="BtnMais" Text="+" FontSize="20" WidthRequest="50" HeightRequest="50"  BackgroundColor="Green" HorizontalOptions="End" Command="{Binding AdicionaQuantidade}"></Button>
+            <Label Text="{Binding Quantidade, Mode=TwoWay}"  HorizontalOptions="End" ></Label>
+            <Button x:Name="BtnMenos" Text="-" FontSize="20" WidthRequest="50" HeightRequest="50"   BackgroundColor="Red" AbsoluteLayout.LayoutFlags="None"  HorizontalOptions="End" Command="{Binding RemoverQuantidade}"></Button>
+
+    </StackLayout>
+    </StackLayout>
+</ContentPage>

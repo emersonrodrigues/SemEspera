@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SemEspera.Views.LoginView">
+    <StackLayout VerticalOptions="Center" Margin="5">
+        <Image Source="Logo.png"></Image>
+        <Entry Placeholder="Email" Text="{Binding Email}"></Entry>
+        <Entry Placeholder="Senha"  IsPassword="True" Text="{Binding Senha}"></Entry>
+        <Button Text="Entrar" Command="{Binding  LogarCommand  }"></Button>
+        <Label  Text="Cadastrar-se?"  FontSize="Micro" HorizontalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CadastrarPerfil}" />
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+</ContentPage>
